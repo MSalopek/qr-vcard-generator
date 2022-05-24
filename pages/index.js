@@ -1,3 +1,5 @@
+import Head from 'next/head'
+
 import { useState } from "react";
 import VCards from "vcards-js";
 import QRCode from "react-qr-code";
@@ -69,13 +71,19 @@ export default function Home() {
   };
 
   return (
+<>
+    <Head>
+      <title>vCard QR Generator</title>
+      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      <meta name="description" content="Generate vCard QR codes for importing contacts into Outlook, iPhone, Andriod and more." />
+    </Head>
     <main className="bg-gray-100 min-h-screen">
       <section className="w-full container mx-auto flex flex-row md:flex-col lg:flex-row sm:flex-col items-center justify-between gap-8">
         <div className="container mx-auto flex flex-col items-center">
           <h1 className="mt-10 text-2xl font-bold">Generate vCard QR Code</h1>
           <p className="mb-4 w-1/2 p-4 text-center">
             The values you input will be used to create a vCard in QR form. You
-            can use the QR code to import contacts into your phone.
+            can use the QR code to import contacts into Outlook, iPhone, Andriod and many more.
           </p>
           <div className="block rounded-lg bg-white p-6 shadow-lg">
             <form className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-4 pb-10 ">
@@ -314,7 +322,7 @@ export default function Home() {
         )}
       </section>
     </main>
+  </>
   );
 }
 
-function QR({ cardString }) {}
