@@ -44,27 +44,27 @@ export default function Home() {
     vcard.workAddress.postalCode = postalCode;
     vcard.workAddress.countryRegion = countryRegion;
 
-    console.log(vcard.getFormattedString());
     setCardString(vcard.getFormattedString());
     setShow(true);
   };
 
   const clear = () => {
-    vcard.firstName = null;
-    vcard.lastName = null;
-    vcard.title = null;
-    vcard.organization = null;
-    vcard.url = null;
-    vcard.email = null;
-    vcard.workPhone = null;
-    vcard.cellPhone = null;
-    vcard.homePhone = null;
-    vcard.workFax = null;
-    vcard.workAddress.street = null;
-    vcard.workAddress.city = null;
-    vcard.workAddress.stateProvince = null;
-    vcard.workAddress.postalCode = null;
-    vcard.workAddress.countryRegion = null;
+    setFirstName("");
+    setLastName("");
+    setTitle("");
+    setOrganization("");
+    setUrl("");
+    setEmail("");
+    setWorkPhone("");
+    setCellPhone("");
+    setHomePhone("");
+    setWorkFax("");
+    setStreet("");
+    setCity("");
+    setStateProvince("");
+    setPostalCode("");
+    setCountryRegion("");
+    setCardString("");
     setShow(false);
   };
 
