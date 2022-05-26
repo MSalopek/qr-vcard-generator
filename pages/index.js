@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 import { useState } from "react";
 import VCards from "vcards-js";
-import QRCode from "react-qr-code";
+import { QRCodeSVG } from 'qrcode.react';
 
 export default function Home() {
   const [show, setShow] = useState(false);
@@ -300,7 +300,8 @@ export default function Home() {
             className="flex flex-col gap-4 rounded-lg bg-white p-6 shadow-lg"
             id="svg-qr-code"
           >
-            <QRCode value={cardString} />
+            {/* <QRCode value={cardString} /> */}
+            <QRCodeSVG value={cardString} size={256}/>
             <a
               href={dlHref}
               download={filename}
@@ -314,9 +315,9 @@ export default function Home() {
                 );
                 setFilename(`${firstName}-${lastName}-QR.svg`);
               }}
-              className="rounded text-center bg-blue-300 px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white hover:bg-blue-400 focus:outline-none focus:ring-0"
+              className="rounded text-center bg-blue-400 px-6 py-2.5 text-xs font-medium uppercase leading-tight text-white hover:bg-blue-400 focus:outline-none focus:ring-0"
             >
-              Download
+              Download .svg
             </a>
           </div>
         )}
